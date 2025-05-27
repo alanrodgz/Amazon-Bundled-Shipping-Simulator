@@ -1,9 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { useCart } from "@/lib/cart";
+import { useToast } from "@/hooks/use-toast";
 
 export default function PurchaseOptions() {
   const [quantity, setQuantity] = useState(1);
+  const addItem = useCart((state) => state.addItem);
+  const { toast } = useToast();
+
+  const handleAddToCart = () => {
+    for (let i = 0; i < quantity; i++) {
+      addItem({
+        id: "hydro-flask-32oz-black",
+        name: "Hydro Flask Water Bottle - 32 oz, Black",
+        price: 44.99,
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+        size: "32 Fl Oz",
+        color: "Black"
+      });
+    }
+    toast({
+      title: "Added to Cart",
+      description: `${quantity} item(s) added to your cart successfully!`,
+    });
+  };
 
   return (
     <div className="border border-gray-300 rounded-lg p-4 sticky top-4">
@@ -49,7 +70,10 @@ export default function PurchaseOptions() {
       </div>
 
       <div className="space-y-2 mb-4">
-        <button className="w-full bg-amazon-orange hover:bg-orange-500 amazon-navy font-bold py-2 px-4 rounded amazon-button">
+        <button 
+          onClick={handleAddToCart}
+          className="w-full bg-amazon-orange hover:bg-orange-500 amazon-navy font-bold py-2 px-4 rounded amazon-button"
+        >
           Add to Cart
         </button>
         <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded amazon-button">

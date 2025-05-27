@@ -1,4 +1,10 @@
+"use client";
+
+import { useCart } from "@/lib/cart";
+import Link from "next/link";
+
 export default function AmazonHeader() {
+  const totalItems = useCart((state) => state.getTotalItems());
   return (
     <header className="bg-amazon-navy text-white">
       <div className="flex items-center justify-between px-4 py-2">
@@ -41,11 +47,11 @@ export default function AmazonHeader() {
             <div className="text-xs">Returns</div>
             <div className="font-bold">& Orders</div>
           </div>
-          <div className="flex items-center">
+          <Link href="/cart" className="flex items-center hover:border border-white px-1 py-1">
             <i className="fas fa-shopping-cart text-xl mr-1"></i>
             <span className="font-bold">Cart</span>
-            <span className="bg-amazon-orange amazon-navy rounded-full px-1 text-xs ml-1">0</span>
-          </div>
+            <span className="bg-amazon-orange amazon-navy rounded-full px-1 text-xs ml-1">{totalItems}</span>
+          </Link>
         </div>
       </div>
       
