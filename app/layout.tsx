@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Amazon.com: Hydro Flask Water Bottle | Refillable',
+  title: 'Not Amazon: Hydro Flask Water Bottle | Refillable',
   description: 'Hydro Flask Water Bottle - Stainless Steel & Vacuum Insulated - Wide Mouth with Leak Proof Flex Cap - 32 oz, Black. 24-hour cold, 12-hour hot insulation.',
 }
 

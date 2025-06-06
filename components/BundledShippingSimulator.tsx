@@ -27,23 +27,23 @@ export default function BundledShippingSimulator({ onShippingSelect }: BundledSh
   // Simulate neighboring orders check
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Simulate finding neighboring orders
-      const randomOrders = Math.floor(Math.random() * 8) + 2; // 2-9 orders
-      setNeighboringOrders(randomOrders);
-      setShowBundleOption(randomOrders >= 3);
+      // Use a fixed simulation for consistent SSR/client rendering
+      const simulatedOrders = 5; // Fixed number for demo
+      setNeighboringOrders(simulatedOrders);
+      setShowBundleOption(simulatedOrders >= 3);
     }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
 
   const getDeliveryDate = (daysFromNow: number) => {
-    const date = new Date();
-    date.setDate(date.getDate() + daysFromNow);
-    return date.toLocaleDateString('en-US', { 
-      weekday: 'long',
-      month: 'long', 
-      day: 'numeric' 
-    });
+    // Use fixed dates for consistent SSR/client rendering
+    const dates = [
+      "Tomorrow, January 8",
+      "Friday, January 10", 
+      "Monday, January 13"
+    ];
+    return dates[Math.min(daysFromNow - 1, dates.length - 1)] || "Next week";
   };
 
   const shippingOptions: ShippingOption[] = [

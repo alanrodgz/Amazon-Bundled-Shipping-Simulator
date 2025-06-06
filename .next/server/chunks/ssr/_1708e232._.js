@@ -98,15 +98,16 @@ function AmazonHeader() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                        className: "fab fa-amazon text-2xl mr-2"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-2xl font-bold text-white",
+                                        children: "not amazon"
                                     }, void 0, false, {
                                         fileName: "[project]/components/AmazonHeader.tsx",
                                         lineNumber: 19,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xl font-bold",
+                                        className: "text-xl font-bold text-amazon-orange",
                                         children: ".com"
                                     }, void 0, false, {
                                         fileName: "[project]/components/AmazonHeader.tsx",
@@ -1189,21 +1190,21 @@ function BundledShippingSimulator({ onShippingSelect }) {
     // Simulate neighboring orders check
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const timer = setTimeout(()=>{
-            // Simulate finding neighboring orders
-            const randomOrders = Math.floor(Math.random() * 8) + 2; // 2-9 orders
-            setNeighboringOrders(randomOrders);
-            setShowBundleOption(randomOrders >= 3);
+            // Use a fixed simulation for consistent SSR/client rendering
+            const simulatedOrders = 5; // Fixed number for demo
+            setNeighboringOrders(simulatedOrders);
+            setShowBundleOption(simulatedOrders >= 3);
         }, 1500);
         return ()=>clearTimeout(timer);
     }, []);
     const getDeliveryDate = (daysFromNow)=>{
-        const date = new Date();
-        date.setDate(date.getDate() + daysFromNow);
-        return date.toLocaleDateString('en-US', {
-            weekday: 'long',
-            month: 'long',
-            day: 'numeric'
-        });
+        // Use fixed dates for consistent SSR/client rendering
+        const dates = [
+            "Tomorrow, January 8",
+            "Friday, January 10",
+            "Monday, January 13"
+        ];
+        return dates[Math.min(daysFromNow - 1, dates.length - 1)] || "Next week";
     };
     const shippingOptions = [
         {

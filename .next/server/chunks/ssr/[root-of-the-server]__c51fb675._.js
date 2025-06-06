@@ -149,7 +149,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$
 ;
 ;
 const metadata = {
-    title: 'Amazon.com: Hydro Flask Water Bottle | Refillable',
+    title: 'Not Amazon: Hydro Flask Water Bottle | Refillable',
     description: 'Hydro Flask Water Bottle - Stainless Steel & Vacuum Insulated - Wide Mouth with Leak Proof Flex Cap - 32 oz, Black. 24-hour cold, 12-hour hot insulation.'
 };
 function RootLayout({ children }) {

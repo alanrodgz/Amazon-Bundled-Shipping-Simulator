@@ -1,19 +1,21 @@
+"use client";
+
 const footerSections = [
   {
     title: "Get to Know Us",
-    links: ["Careers", "Blog", "About Amazon", "Investor Relations"]
+    links: ["Careers", "Blog", "About Not Amazon", "Investor Relations"]
   },
   {
     title: "Make Money with Us",
-    links: ["Sell products on Amazon", "Sell on Amazon Business", "Sell apps on Amazon", "Become an Affiliate"]
+    links: ["Sell products on Not Amazon", "Sell on Not Amazon Business", "Sell apps on Not Amazon", "Become an Affiliate"]
   },
   {
-    title: "Amazon Payment Products",
-    links: ["Amazon Business Card", "Shop with Points", "Reload Your Balance", "Amazon Currency Converter"]
+    title: "Not Amazon Payment Products",
+    links: ["Not Amazon Business Card", "Shop with Points", "Reload Your Balance", "Not Amazon Currency Converter"]
   },
   {
     title: "Let Us Help You",
-    links: ["Amazon and COVID-19", "Your Account", "Your Orders", "Shipping Rates & Policies"]
+    links: ["Not Amazon and COVID-19", "Your Account", "Your Orders", "Shipping Rates & Policies"]
   }
 ];
 
