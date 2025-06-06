@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { useToast } from "@/hooks/use-toast";
+import BundledShippingSimulator from "./BundledShippingSimulator";
+import ShippingAddressSelector from "./ShippingAddressSelector";
 
 export default function PurchaseOptions() {
   const [quantity, setQuantity] = useState(1);
+  const [selectedShipping, setSelectedShipping] = useState<any>(null);
   const addItem = useCart((state) => state.addItem);
   const { toast } = useToast();
 
@@ -84,6 +87,12 @@ export default function PurchaseOptions() {
       <div className="text-xs amazon-gray mb-4">
         <i className="fas fa-lock mr-1"></i>
         Secure transaction
+      </div>
+
+      <div className="border-t pt-4 mb-6">
+        <BundledShippingSimulator 
+          onShippingSelect={(option) => setSelectedShipping(option)}
+        />
       </div>
 
       <div className="border-t pt-4 space-y-2 text-sm">

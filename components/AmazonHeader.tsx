@@ -2,9 +2,15 @@
 
 import { useCart } from "@/lib/cart";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function AmazonHeader() {
+  const [mounted, setMounted] = useState(false);
   const totalItems = useCart((state) => state.getTotalItems());
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <header className="bg-amazon-navy text-white">
       <div className="flex items-center justify-between px-4 py-2">
@@ -50,7 +56,9 @@ export default function AmazonHeader() {
           <Link href="/cart" className="flex items-center hover:border border-white px-1 py-1">
             <i className="fas fa-shopping-cart text-xl mr-1"></i>
             <span className="font-bold">Cart</span>
-            <span className="bg-amazon-orange amazon-navy rounded-full px-1 text-xs ml-1">{totalItems}</span>
+            <span className="bg-amazon-orange amazon-navy rounded-full px-1 text-xs ml-1">
+              {mounted ? totalItems : 0}
+            </span>
           </Link>
         </div>
       </div>
