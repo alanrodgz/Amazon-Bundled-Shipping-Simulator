@@ -9,6 +9,7 @@ import ShippingAddressSelector from "./ShippingAddressSelector";
 export default function PurchaseOptions() {
   const [quantity, setQuantity] = useState(1);
   const [selectedShipping, setSelectedShipping] = useState<any>(null);
+  const [selectedAddress, setSelectedAddress] = useState<any>(null);
   const addItem = useCart((state) => state.addItem);
   const { toast } = useToast();
 
@@ -87,6 +88,12 @@ export default function PurchaseOptions() {
       <div className="text-xs amazon-gray mb-4">
         <i className="fas fa-lock mr-1"></i>
         Secure transaction
+      </div>
+
+      <div className="border-t pt-4 mb-6">
+        <ShippingAddressSelector 
+          onAddressSelect={(address) => setSelectedAddress(address)}
+        />
       </div>
 
       <div className="border-t pt-4 mb-6">
