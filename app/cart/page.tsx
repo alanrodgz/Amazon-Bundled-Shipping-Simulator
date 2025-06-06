@@ -33,7 +33,7 @@ export default function CartPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <AmazonHeader />
+      <NotAmazonHeader />
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Shopping Cart</h1>
@@ -124,7 +124,7 @@ export default function CartPage() {
           </div>
         </div>
       </div>
-      <AmazonFooter />
+      <NotAmazonFooter />
     </div>
   );
 }
