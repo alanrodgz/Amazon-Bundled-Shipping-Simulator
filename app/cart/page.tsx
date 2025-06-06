@@ -1,8 +1,8 @@
 "use client";
 
 import { useCart } from "@/lib/cart";
-import AmazonHeader from "@/components/AmazonHeader";
-import AmazonFooter from "@/components/AmazonFooter";
+import NotAmazonHeader from "@/components/NotAmazonHeader";
+import NotAmazonFooter from "@/components/NotAmazonFooter";
 import Link from "next/link";
 
 export default function CartPage() {
@@ -11,7 +11,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="bg-white min-h-screen">
-        <AmazonHeader />
+        <NotAmazonHeader />
         <div className="max-w-4xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
           <div className="text-center py-16">
@@ -26,7 +26,7 @@ export default function CartPage() {
             </Link>
           </div>
         </div>
-        <AmazonFooter />
+        <NotAmazonFooter />
       </div>
     );
   }

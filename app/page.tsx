@@ -1,15 +1,15 @@
-import AmazonHeader from "@/components/AmazonHeader";
+import NotAmazonHeader from "@/components/NotAmazonHeader";
 import ProductGallery from "@/components/ProductGallery";
 import ProductDetails from "@/components/ProductDetails";
 import PurchaseOptions from "@/components/PurchaseOptions";
 import ProductTabs from "@/components/ProductTabs";
 import RelatedProducts from "@/components/RelatedProducts";
-import AmazonFooter from "@/components/AmazonFooter";
+import NotAmazonFooter from "@/components/NotAmazonFooter";
 
 export default function ProductPage() {
   return (
     <div className="bg-white">
-      <AmazonHeader />
+      <NotAmazonHeader />
       
       {/* Breadcrumb */}
       <div className="px-4 py-2 text-sm amazon-blue">
@@ -41,7 +41,7 @@ export default function ProductPage() {
         <RelatedProducts />
       </div>
 
-      <AmazonFooter />
+      <NotAmazonFooter />
     </div>
   );
 }
